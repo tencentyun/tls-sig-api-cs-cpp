@@ -1,4 +1,4 @@
-## 说明
+# 说明
 本仓库提供了腾讯云云通信账号 tls sig api 的 C# 版本，采用 C++ 扩展方式实现。在以下平台通过验证，
 - Windows 10 x64，.NET Framework 4.6.1
 - Mac 10.13.6，.NET Core 2.2.106
