@@ -2,10 +2,10 @@
 本仓库提供了腾讯云云通信账号 tls sig api 的 C# 版本，采用 C++ 扩展方式实现。
 
 ## 构建扩展
-由于依赖本地代码，需要使用 tls sig api [C++ 项目](https://github.com/tencentyun/tls-sig-api)进行构建。
+依赖 C++ 编写的动态库，需要使用 tls sig api [C++ 项目](https://github.com/tencentyun/tls-sig-api)进行构建。
 
 ## 源代码集成
-将 TLSSigAPI.cs 下载开发者项目的目录下即可，api 实现仅依赖了 zlib.net 类库，请在项目中进行导入。
+将 TLSSigAPI.cs 下载开发者项目的目录下即可。
 
 按需修改 `TLSSigAPI.cs` 中的动态库路径，
 ```C#
