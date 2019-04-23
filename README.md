@@ -18,12 +18,12 @@ public const string DynamicLibPath = @"C:\Users\Administrator\tls-sig-api\Releas
 ...
 using tencentyun
 ...
-// .net 导入私钥的接口与 openssl 不一致
-// 这里私钥需要把下载到 pem 文件中的头尾去掉
-string privKeyContent = 
-    "MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgkTfHxPa8YusG+va8"
-    + "1CRztNQBOEr90TBEjlQBZ5d1Y0ChRANCAAS9isP/xLib7EZ1vS5OUy+gOsYBwees"
-    + "PMDvWiTygPAUsGZv1PHLoa0ciqsElkO1fMGwNrzOKJx1Oo194Ri+SypV";
+// 私钥按照下载的格式读入
+string privKeyContent = @"-----BEGIN PRIVATE KEY-----
+MIGEAgEAMBAGByqGSM49AgEGBSuBBAAKBG0wawIBAQQgK55Mnxa+AH7tvzvAyfxW
+aN1rZdL0Xv2hyg3k2eqjeHyhRANCAAQvkz6T2Or8EEzgF0lWBF0RtrxjJYUF6RqM
+2JUDAP4UD/cIwhGTYlWC2ZRPZEvaXZJapz2Y2c2TwcgW13sAnIKZ
+-----END PRIVATE KEY-----";
 TLSSigAPI api = new TLSSigAPI(1400000000, privKeyContent, "");
 Console.WriteLine(api.genSig("xiaojun"));
 ```
@@ -33,12 +33,12 @@ Console.WriteLine(api.genSig("xiaojun"));
 ...
 using tencentyun
 ...
-// .net 导入私钥的接口与 openssl 不一致
-// 这里私钥需要把下载到 pem 文件中的头尾去掉
-string privKeyContent = 
-    "MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgkTfHxPa8YusG+va8"
-    + "1CRztNQBOEr90TBEjlQBZ5d1Y0ChRANCAAS9isP/xLib7EZ1vS5OUy+gOsYBwees"
-    + "PMDvWiTygPAUsGZv1PHLoa0ciqsElkO1fMGwNrzOKJx1Oo194Ri+SypV";
+// 私钥按照下载的格式读入
+string privKeyContent = @"-----BEGIN PRIVATE KEY-----
+MIGEAgEAMBAGByqGSM49AgEGBSuBBAAKBG0wawIBAQQgK55Mnxa+AH7tvzvAyfxW
+aN1rZdL0Xv2hyg3k2eqjeHyhRANCAAQvkz6T2Or8EEzgF0lWBF0RtrxjJYUF6RqM
+2JUDAP4UD/cIwhGTYlWC2ZRPZEvaXZJapz2Y2c2TwcgW13sAnIKZ
+-----END PRIVATE KEY-----";
 TLSSigAPI api = new TLSSigAPI(1400000000, privKeyContent, "");
 // 使用指定 30 天有效期
 Console.WriteLine(api.genSig("xiaojun", 3600*24*30));
