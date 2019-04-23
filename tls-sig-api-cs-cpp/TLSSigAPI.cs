@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +27,8 @@ namespace tencentyun
         {
             StringBuilder sig = new StringBuilder(4096);
             StringBuilder errMsg = new StringBuilder(4096);
-            int ret = tls_gen_sig_ex((UInt32)sdkappid, identifier, sig, 4096, priKeyContent, (UInt32)priKeyContent.Length, errMsg, 4096);
+            int ret = tls_gen_sig_ex_with_expire((UInt32)sdkappid, identifier, (UInt32)expireTime,
+                sig, 4096, priKeyContent, (UInt32)priKeyContent.Length, errMsg, 4096);
             return sig.ToString();
         }
 
@@ -57,10 +58,11 @@ namespace tencentyun
             StringBuilder errMsg,
             UInt32 errMsgBuffLen
         );
-        [DllImport(DynamicLibPath, EntryPoint = "tls_gen_sig_ex", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-        public extern static int tls_gen_sig_ex(
+        [DllImport(DynamicLibPath, EntryPoint = "tls_gen_sig_ex_with_expire", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public extern static int tls_gen_sig_ex_with_expire(
             UInt32 sdkappid,
             string identifier,
+            UInt32 expire,
             StringBuilder sig,
             UInt32 sigBuffLen,
             string priKey,

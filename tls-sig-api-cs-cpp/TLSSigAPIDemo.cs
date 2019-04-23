@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using tencentyun;
 
 namespace tls_sig_api_cs
@@ -8,9 +8,9 @@ namespace tls_sig_api_cs
         static public void Main(String[] args)
         {
             string privKeyContent = @"-----BEGIN PRIVATE KEY-----
-MIGEAgEAMBAGByqGSM49AgEGBSuBBAAKBG0wawIBAQQgK55Mnxa+AH7tvzvAyfxW
-aN1rZdL0Xv2hyg3k2eqjeHyhRANCAAQvkz6T2Or8EEzgF0lWBF0RtrxjJYUF6RqM
-2JUDAP4UD/cIwhGTYlWC2ZRPZEvaXZJapz2Y2c2TwcgW13sAnIKZ
+MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgkTfHxPa8YusG+va8
+1CRztNQBOEr90TBEjlQBZ5d1Y0ChRANCAAS9isP/xLib7EZ1vS5OUy+gOsYBwees
+PMDvWiTygPAUsGZv1PHLoa0ciqsElkO1fMGwNrzOKJx1Oo194Ri+SypV
 -----END PRIVATE KEY-----";
             TLSSigAPI api = new TLSSigAPI(1400000000, privKeyContent, "");
             Console.WriteLine(api.genSig("xiaojun"));
