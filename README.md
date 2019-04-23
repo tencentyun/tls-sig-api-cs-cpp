@@ -1,8 +1,9 @@
 # 说明
 本仓库提供了腾讯云云通信账号 tls sig api 的 C# 版本，采用 C++ 扩展方式实现。在以下平台通过验证，
 - Windows 10 x64，.NET Framework 4.6.1
-- Mac 10.13.6，.NET Core 2.2.106
-- Linux CentOS 7.2，.NET Core 2.2.203
+- Windows 10 x64，.NET Core 2.X x64
+- Mac 10.13.6，.NET Core 2.2.106 x64
+- Linux CentOS 7.2，.NET Core 2.2.203 x64
 
 # 集成说明
 **首先**需要使用 C++ 项目构建需要的动态库，然后再通过源代码进行集成。
